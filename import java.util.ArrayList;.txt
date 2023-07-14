@@ -1,0 +1,138 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+/**Пусть дан произвольный список целых чисел.
+
+ 1) Нужно удалить из него чётные числа
+ 2) Найти минимальное значение
+ 3) Найти максимальное значение
+ 4) Найти среднее значение
+ */
+public class HW3_task1 {
+           public static void main(String[] args) {
+            // Произвольный список целых чисел
+            List<Integer> numbers = new ArrayList<>();
+
+               Random random = new Random();
+               for (int i = 0; i < 10; i++) {
+                   int randomNumber = random.nextInt(100); // Генерация случайного числа от 0 до 99
+                   numbers.add(randomNumber);
+               }
+               System.out.println("Исходный список случайных чисел: " + numbers);
+
+            // 1) Удаление чётных чисел
+            numbers.removeIf(n -> n % 2 == 0);
+
+            // 2) Нахождение минимального значения
+            int min = Integer.MAX_VALUE;
+            for (int number : numbers) {
+                if (number < min) {
+                    min = number;
+                }
+            }
+
+            // 3) Нахождение максимального значения
+            int max = Integer.MIN_VALUE;
+            for (int number : numbers) {
+                if (number > max) {
+                    max = number;
+                }
+            }
+
+            // 4) Нахождение среднего значения
+            double sum = 0;
+            for (int number : numbers) {
+                sum += number;
+            }
+            double average = sum / numbers.size();
+
+            System.out.println("Список после удаления чётных чисел: " + numbers);
+            System.out.println("Минимальное значение: " + min);
+            System.out.println("Максимальное значение: " + max);
+            System.out.println("Среднее значение: " + average);
+
+
+
+
+ефыл 2
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Random;
+public class task2 {
+    public static void main(String[] args) {
+    List<String> planets = new ArrayList<>();
+        planets.add("Меркурий");
+        planets.add("Венера");
+        planets.add("Венера");
+        planets.add("Земля");
+        planets.add("Марс");
+        planets.add("Юпитер");
+        planets.add("Сатурн");
+        planets.add("Уран");
+        planets.add("Нептун");
+        planets.add("Нептун");
+        planets.add("Нептун");
+
+        System.out.println("Исходный список планет: " + planets);
+
+
+        Collections.shuffle(planets, new Random());
+
+        System.out.println("Список планет в произвольном порядке: " + planets);
+
+    Set<String> uniquePlanets = new HashSet<>(planets);
+    List<String> uniquePlanetList = new ArrayList<>(uniquePlanets);
+
+        System.out.println("Список планет без повторений: " + uniquePlanetList);
+
+        Collections.shuffle(uniquePlanetList);
+
+        System.out.println("Список планет в произвольном порядке: " + uniquePlanetList);
+
+    Map<String, Integer> planetCount = new HashMap<>();
+
+        for (String planet : uniquePlanetList) {
+        planetCount.put(planet, Collections.frequency(planets, planet));
+    }
+
+        for (String planet : uniquePlanetList) {
+        int count = planetCount.get(planet);
+        System.out.println("Планета: " + planet + ", Количество упоминаний: " + count);
+    }
+}
+}
+
+
+ьфшт
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            int randomNumber = random.nextInt(100); // Генерация случайного числа от 0 до 99
+            numbers.add(randomNumber);
+        }
+        System.out.println("Исходный список случайных чисел: " + numbers);
+
+        Collections.sort(numbers);
+
+        System.out.println("Отсортированный список: " + numbers);
+    }
+}
+
+        }
+    }
+
